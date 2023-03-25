@@ -1,32 +1,38 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '../../../../../../../../../../vite.svg'
-import './App.css'
+import { Routes, Route } from 'react-router-dom'
+import Header from './components/Header'
+import Home from './components/Home'
+import Base from './components/Base'
+import Toppings from './components/Toppings'
+import Order from './components/Order'
 
 function App() {
-	const [count, setCount] = useState(0)
+	const [pizza, setPizza] = useState({ base: '', toppings: [] })
 
-	const hi = 'jo'
+	const addBase = base => {
+		setPizza({ ...pizza, base })
+	}
+
+	const addTopping = topping => {
+		let newToppings
+		if (!pizza.toppings.includes(topping)) {
+			newToppings = [...pizza.toppings, topping]
+		} else {
+			newToppings = pizza.toppings.filter(item => item !== topping)
+		}
+		setPizza({ ...pizza, toppings: newToppings })
+	}
 
 	return (
-		<div className='App'>
-			<div>
-				<a href='https://vitejs.dev' target='_blank' rel='noreferrer'>
-					<img src={viteLogo} className='logo' alt='Vite logo' />
-				</a>
-				<a href='https://reactjs.org' target='_blank' rel='noreferrer'>
-					<img src={reactLogo} className='logo react' alt='React logo' />
-				</a>
-			</div>
-			<h1>Vite + React</h1>
-			<div className='card'>
-				<button onClick={() => setCount(count => count + 1)}>count is {count}</button>
-				<p>
-					Edit <code>src/App.tsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className='read-the-docs'>Click on the Vite and React logos to learn more</p>
-		</div>
+		<>
+			<Header />
+			<Routes>
+				<Route path='/' element={<Home />} />
+				<Route path='/base' element={<Base addBase={addBase} pizza={pizza} />} />
+				<Route path='/toppings' element={<Toppings addTopping={addTopping} pizza={pizza} />} />
+				<Route path='/order' element={<Order pizza={pizza} />} />
+			</Routes>
+		</>
 	)
 }
 
