@@ -11,3 +11,6 @@ initial sayins where we should animate from originally, and animate is where we 
 
 5. transition attribute: Describe how the animation transition from start to end(from initial to animate)
    options: delay, duration, type(the default is spring), stiffness(only for spring type)
+
+6. Hover animations:
+   instead of using animate, we use whileHover
