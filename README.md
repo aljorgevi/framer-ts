@@ -123,3 +123,41 @@ VARIANTS PART 2: Check order component to see.
 		}
 	}
 }`
+
+9.  keyFrames:
+    For hover button we move from:
+    `		<m.button
+					whileHover={{
+						scale: 1.1,
+						textShadow: '0px 0px 8px rgb(255,255,255)',
+						boxShadow: '0px 0px 8px rgb(255,255,255)'
+					}}
+				>
+					Create Your Pizza
+				</m.button>`
+    to this:
+    `
+    const buttonVariants = {
+    hover: {
+    scale: 1.1,
+    textShadow: '0px 0px 8px rgb(255,255,255)',
+    boxShadow: '0px 0px 8px rgb(255,255,255)'
+    }
+    }
+
+            <m.button variants={buttonVariants} whileHover='hover'>
+
+        `
+
+    And this is a example of keyframe:
+    `const buttonVariants = {
+	// visible: {
+	// 	// x: [0, -20, 20, -20, 20, 0], // keyframes
+	// 	transition: { delay: 2 }
+	// },
+	hover: {
+		scale: [1, 1.1, 1, 1.1, 1, 1.1, 1],
+		textShadow: '0px 0px 8px rgb(255,255,255)',
+		boxShadow: '0px 0px 8px rgb(255,255,255)'
+	}
+}`
