@@ -3,7 +3,7 @@ module.exports = {
 		browser: true,
 		es2021: true
 	},
-	extends: ['plugin:react/recommended', 'standard'],
+	extends: ['plugin:react/recommended', 'standard', 'prettier'],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		ecmaFeatures: {
@@ -11,8 +11,11 @@ module.exports = {
 		},
 		ecmaVersion: 12,
 		sourceType: 'module',
-		project: './tsconfig.json'
+		project: './tsconfig.json',
+		tsconfigRootDir: __dirname
 	},
 	plugins: ['react', '@typescript-eslint'],
-	rules: {}
+	rules: {
+		'react/react-in-jsx-scope': 'off'
+	}
 }
