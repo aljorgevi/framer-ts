@@ -126,17 +126,18 @@ VARIANTS PART 2: Check order component to see.
 
 9.  keyFrames:
     For hover button we move from:
-    `		<m.button
-			whileHover={{
-				scale: 1.1,
-				textShadow: '0px 0px 8px rgb(255,255,255)',
-				boxShadow: '0px 0px 8px rgb(255,255,255)'
-			}}
-		>
-			Create Your Pizza
-		</m.button>`
-    to this:
-    `
+    ` <m.button
+    whileHover={{
+    		scale: 1.1,
+    		textShadow: '0px 0px 8px rgb(255,255,255)',
+    		boxShadow: '0px 0px 8px rgb(255,255,255)'
+    	}}
+
+    >
+
+        Create Your Pizza
+
+    </m.button>`to this:`
     const buttonVariants = {
     hover: {
     scale: 1.1,
@@ -176,3 +177,20 @@ VARIANTS PART 2: Check order component to see.
 		}
 	}
 }`
+
+11. Animate Presence: This is a component that we can use to animate components out of the screen.
+    We need to add an exit attribute. When the html is remove from the dom, the animate presence knows to look for this exit attr and use the animation to tak it out of the dom.
+    `<AnimatePresence>
+				{showTitle && (
+					<m.h2
+						exit={{
+							y: -1000,
+							transition: {
+								duration: 1
+							}
+						}}
+					>
+						Thank you for your order :)
+					</m.h2>
+				)}
+			</AnimatePresence>`
