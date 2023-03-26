@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion as m } from 'framer-motion'
+import Button from './Button'
 
 const containerVariants = {
 	// This is basically going to be the same as the initial state.
@@ -65,17 +66,7 @@ const Toppings = ({ addTopping, pizza }) => {
 				})}
 			</ul>
 
-			<Link to='/order'>
-				<m.button
-					whileHover={{
-						scale: 1.1,
-						textShadow: '0px 0px 8px rgb(255,255,255)',
-						boxShadow: '0px 0px 8px rgb(255,255,255)'
-					}}
-				>
-					Order
-				</m.button>
-			</Link>
+			<Button to='/order'>Order</Button>
 		</m.div>
 	)
 }

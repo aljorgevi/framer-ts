@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion as m } from 'framer-motion'
+import Button from './Button'
 
 const containerVariants = {
 	// This is basically going to be the same as the initial state.
@@ -67,17 +68,7 @@ const Base = ({ addBase, pizza }) => {
 
 			{pizza.base && (
 				<m.div className='next' variants={nextVariants}>
-					<Link to='/toppings'>
-						<m.button
-							whileHover={{
-								scale: 1.1,
-								textShadow: '0px 0px 8px rgb(255,255,255)',
-								boxShadow: '0px 0px 8px rgb(255,255,255)'
-							}}
-						>
-							Next
-						</m.button>
-					</Link>
+					<Button to='/toppings'>Next</Button>
 				</m.div>
 			)}
 		</m.div>
