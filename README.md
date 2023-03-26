@@ -208,3 +208,5 @@ But I prefered to use the return function in the useEffect.
     check at the code Logo.tsx
 
 16. Create Loader: This is an interesting one. We can animate without hidden, visible, exit, etc. Just the animation wherever the component is located. Look at the first version of the animation commented at the end of the file Lodear.tsx
+
+17. add useCycle hook to change and toggle between two different animations.
