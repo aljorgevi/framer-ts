@@ -181,21 +181,21 @@ VARIANTS PART 2: Check order component to see.
 11. Animate Presence: This is a component that we can use to animate components out of the screen.
     We need to add an exit attribute. When the html is remove from the dom, the animate presence knows to look for this exit attr and use the animation to tak it out of the dom.
     `<AnimatePresence>
-			{showTitle && (
-				<m.h2
-					exit={{
-						y: -1000,
-						transition: {
-							duration: 1
-						}
-					}}
-				>
-					Thank you for your order :)
-				</m.h2>
-			)}
-		</AnimatePresence>`
+		{showTitle && (
+			<m.h2
+				exit={{
+					y: -1000,
+					transition: {
+						duration: 1
+					}
+				}}
+			>
+				Thank you for your order :)
+			</m.h2>
+		)}
+	</AnimatePresence>`
 
 12. To use AnimatePresense with pages, we need to wrap the app with it and identify the location and pass it to the routes like so:
     `		<AnimatePresence mode='wait'>
-				<Routes location={location} key={location.key}>`
-    We also added mode='wait' to to make sure that any component that exisit is complete before the next is rendered.
+			<Routes location={location} key={location.key}>`
+    We also added mode='wait' to to make sure that any component that exisit is complete before the next is rendered. (exitBeforeEnter deprecated)

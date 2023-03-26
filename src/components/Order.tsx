@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { motion as m, AnimatePresence } from 'framer-motion'
+import { motion as m } from 'framer-motion'
+import { useEffect } from 'react'
 
 const containerVariants = {
 	hidden: {
@@ -39,7 +39,13 @@ const childVariants = {
 	}
 }
 
-const Order = ({ pizza }) => {
+const Order = ({ pizza, toggle }) => {
+	useEffect(() => {
+		setTimeout(() => {
+			toggle()
+		}, 5000)
+	}, [])
+
 	return (
 		<m.div
 			className='container order'
