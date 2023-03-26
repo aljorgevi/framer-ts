@@ -21,6 +21,12 @@ const containerVariants = {
 			// we can also stagger the children. This means that it stagger the children by 0.4 seconds. So all animate one after another for a nice little effect.
 			staggerChildren: 0.4
 		}
+	},
+	exit: {
+		x: '-100vw',
+		transition: {
+			ease: 'easeInOut'
+		}
 	}
 }
 
@@ -34,33 +40,16 @@ const childVariants = {
 }
 
 const Order = ({ pizza }) => {
-	const [showTitle, setShowTitle] = useState(true)
-
-	setTimeout(() => {
-		setShowTitle(false)
-	}, 4000)
-
 	return (
 		<m.div
 			className='container order'
 			variants={containerVariants}
 			initial='hidden'
 			animate='visible'
+			exit='exit'
 		>
-			<AnimatePresence>
-				{showTitle && (
-					<m.h2
-						exit={{
-							y: -1000,
-							transition: {
-								duration: 1
-							}
-						}}
-					>
-						Thank you for your order :)
-					</m.h2>
-				)}
-			</AnimatePresence>
+			<h2>Thank you for your order :)</h2>
+
 			<m.p variants={childVariants}>You ordered a {pizza.base} pizza with:</m.p>
 			<m.div variants={childVariants}>
 				{pizza.toppings.map(topping => (
