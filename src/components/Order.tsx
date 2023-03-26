@@ -39,11 +39,13 @@ const childVariants = {
 	}
 }
 
-const Order = ({ pizza, toggle }) => {
+const Order = ({ pizza, toggle, setShowModal }) => {
 	useEffect(() => {
 		setTimeout(() => {
 			toggle()
 		}, 5000)
+
+		return () => setShowModal(false)
 	}, [])
 
 	return (

@@ -35,12 +35,16 @@ function App() {
 		<>
 			<Header />
 			<Modal showModal={showModal} toggle={toggle} />
+			{/* onExitComplete={() => setShowModal(false)} */}
 			<AnimatePresence mode='wait'>
 				<Routes location={location} key={location.key}>
 					<Route path='/' element={<Home />} />
 					<Route path='/base' element={<Base addBase={addBase} pizza={pizza} />} />
 					<Route path='/toppings' element={<Toppings addTopping={addTopping} pizza={pizza} />} />
-					<Route path='/order' element={<Order pizza={pizza} toggle={toggle} />} />
+					<Route
+						path='/order'
+						element={<Order pizza={pizza} toggle={toggle} setShowModal={setShowModal} />}
+					/>
 				</Routes>
 			</AnimatePresence>
 		</>
