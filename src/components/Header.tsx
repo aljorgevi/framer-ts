@@ -5,12 +5,15 @@ import Logo from './svgs/Logo'
 const Header = () => {
 	return (
 		<header>
-			<div className='logo'>
+			<m.div className='logo'>
 				<Link to='/'>
 					<Logo />
 				</Link>
-			</div>
+			</m.div>
 			<m.div
+				drag
+				dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+				dragElastic={0.7}
 				className='title'
 				initial={{ y: -250 }}
 				animate={{ y: -10 }}

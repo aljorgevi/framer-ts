@@ -37,7 +37,7 @@ const Loader = () => {
 
 	return (
 		<>
-			<m.div className='loader' variants={loaderVariants} animate={animation} />
+			<m.div className='loader' variants={loaderVariants} animate={animation}  />
 			<div style={{ cursor: 'pointer' }} onClick={() => cycleAnimation()}>
 				Change Loader
 			</div>
