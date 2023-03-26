@@ -197,9 +197,12 @@ VARIANTS PART 2: Check order component to see.
 
 12. To use AnimatePresense with pages, we need to wrap the app with it and identify the location and pass it to the routes like so:
     `		<AnimatePresence mode='wait'>
-	<Routes location={location} key={location.key}>`
+<Routes location={location} key={location.key}>`
     We also added mode='wait' to to make sure that any component that exisit is complete before the next is rendered. (exitBeforeEnter deprecated)
 
 13 and 14: This is about add a modal to order pages. Check code in modal and order component.
 Also there's a prop to AnimatePresence: {/_ onExitComplete={() => setShowModal(false)} _/}
 But I prefered to use the return function in the useEffect.
+
+15. Animatin SVG's.
+    check at the code Logo.tsx
