@@ -5,7 +5,7 @@ const svgVariants = {
 	show: {
 		rotate: 0,
 		transition: {
-			duration: 1
+			duration: 1.5
 		}
 	}
 }
@@ -20,8 +20,9 @@ const pathVariants = {
 		opacity: 1,
 		pathLength: 1,
 		transition: {
-			duration: 2,
-			ease: 'easeInOut'
+			duration: 1.3,
+			ease: 'easeInOut',
+			delay: 0.5
 		}
 	}
 }
